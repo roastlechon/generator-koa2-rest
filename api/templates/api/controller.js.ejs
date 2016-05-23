@@ -8,5 +8,6 @@ exports.index = (ctx, next) => {
     .then(data => {
       ctx.status = 200;
       ctx.body = data;
+      return next();
     });
 };
