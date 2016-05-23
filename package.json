@@ -13,5 +13,9 @@
   "license": "MIT",
   "dependencies": {
     "yeoman-generator": "^0.23.3"
-  }
+  },
+  "files": [
+    "api",
+    "app"
+  ]
 }
