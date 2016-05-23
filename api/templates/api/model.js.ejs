@@ -1,0 +1,15 @@
+'use strict';
+
+const config = require('../../config/environment');
+
+exports.list = (ctx, next) => {
+  return async();
+};
+
+function async() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      return resolve([]);
+    });
+  });
+}

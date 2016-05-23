@@ -1,0 +1,12 @@
+'use strict';
+
+let config = require('../../config/environment');
+let <%= apiModel %> = require('./<%= apiName %>.model');
+
+exports.index = (ctx, next) => {
+  return <%= apiModel %>.list()
+    .then(data => {
+      ctx.status = 200;
+      ctx.body = data;
+    });
+};

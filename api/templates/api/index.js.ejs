@@ -1,0 +1,9 @@
+'use strict';
+
+const controller = require('./<%= apiName %>.controller');
+const router = require('koa-router')();
+
+// Route Endpoints
+router.get('/', controller.index);
+
+module.exports = router.routes();

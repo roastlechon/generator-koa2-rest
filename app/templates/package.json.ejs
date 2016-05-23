@@ -1,0 +1,19 @@
+{
+  "name": "<%= serviceName %>",
+  "description": "<%= serviceDescription %>",
+  "license": "MIT",
+  "version": "0.0.1",
+  "main": "src/server.js",
+  "dependencies": {
+    "koa": "^2.0.0",
+    "koa-morgan": "^1.0.1",
+    "koa-mount": "^2.0.0",
+    "koa-router": "^7.0.1"
+  },
+  "engines": {
+    "node": "~5.4.1"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node --harmony src/server.js"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "generator-koa2-rest",
+  "version": "0.0.1",
+  "description": "Yeoman REST generator for koa@next",
+  "engines": {
+    "node": "~5.4.1"
+  },
+  "author": {
+    "name": "Noel Madali",
+    "email": "amadali@gmail.com",
+    "url": "https://github.com/roastlechon"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^0.23.3"
+  }
+}
