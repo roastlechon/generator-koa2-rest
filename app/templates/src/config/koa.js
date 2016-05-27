@@ -1,8 +1,8 @@
 'use strict';
 
-const config = require('./environment');
-const morgan = require('koa-morgan');
+import config from './index';
+import morgan from 'koa-morgan';
 
-module.exports = (app => {
+export default function configKoa(app) {
    app.use(morgan(config.logType));
-});
+}

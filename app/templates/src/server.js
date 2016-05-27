@@ -1,12 +1,15 @@
 'use strict';
 
-const config = require('./config/environment');
-const routes = require('./config/routes');
-const Koa = require('koa');
+import 'babel-polyfill';
+import config from './config';
+import configRoutes from './config/routes';
+import Koa from 'koa';
+import configKoa from './config/koa';
+
 const app = new Koa();
 
-require('./config/routes')(app);
-require('./config/koa')(app);
+configRoutes(app);
+configKoa(app);
 
 app.listen(config.port, config.ip, () => {
   console.log(`Koa server listening on ${config.port}, in ${config.env} mode`);

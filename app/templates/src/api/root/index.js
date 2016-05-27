@@ -1,8 +1,10 @@
 'use strict';
 
-const controller = require('./root.controller');
-const router = require('koa-router')();
+import { index } from './root.controller';
+import router from 'koa-router';
 
-router.get('/', controller.index);
+const root = router();
 
-module.exports = router.routes();
+root.get('/', index);
+
+export default root;

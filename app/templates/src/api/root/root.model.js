@@ -1,11 +1,11 @@
 'use strict';
 
-const config = require('../../config/environment');
+import * as config from '../../config';
 
-exports.list = () => {
+export function list() {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve([]);
     });
   });
-};
+}

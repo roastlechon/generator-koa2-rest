@@ -1,10 +1,10 @@
 'use strict';
 
-const mount = require('koa-mount');
+import mount from 'koa-mount';
+import root from '../api/root/';
 
-module.exports = (app => {
-  app.use(mount('/', require('../api/root')));
+export default function configRoutes(app) {
+  app.use(mount('/', root.routes()));
 
   // List Endpoints Here
-  // app.use(mount('/test', require('../api/test')));
-});
+}

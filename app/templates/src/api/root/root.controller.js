@@ -1,13 +1,13 @@
 'use strict';
 
-const config = require('../../config/environment');
-const rootModel = require('./root.model');
+import * as config from '../../config';
+import { list } from './root.model';
 
-exports.index = (ctx, next) => {
-  return rootModel.list()
+export function index(ctx, next) {
+  return list()
     .then(data => {
       ctx.status = 200;
       ctx.body = data;
       return next();
     });
-};
+}

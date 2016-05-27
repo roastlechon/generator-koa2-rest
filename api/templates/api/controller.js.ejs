@@ -1,13 +1,13 @@
 'use strict';
 
-let config = require('../../config/environment');
-let <%= apiModel %> = require('./<%= apiName %>.model');
+import * as config from '../../config';
+import { list } from './<%= apiModel %>.model';
 
-exports.index = (ctx, next) => {
-  return <%= apiModel %>.list()
+export function index(ctx, next) {
+  return list()
     .then(data => {
       ctx.status = 200;
       ctx.body = data;
       return next();
     });
-};
+}
