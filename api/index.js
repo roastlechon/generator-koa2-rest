@@ -41,16 +41,6 @@ class Koa2RestGenerator extends yeoman.Base {
     );
   }
 
-  end() {
-    this.prompt([{
-      type: 'confirm',
-      name: 'confirm',
-      message: 'Creating an endpoint does not automatically work. \n' +
-      'You must mount endpoint in src/config/routes.js for it to work: \n' +
-      '   ```app.use(mount(\'/' + this.apiName + '\', require(\'../api/' + this.apiName +'\')));```\n'
-    }]);
-  }
-
 }
 
 module.exports = Koa2RestGenerator;
