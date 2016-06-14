@@ -1,6 +1,6 @@
 {
   "name": "generator-koa2-rest",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Yeoman REST generator for koa@next",
   "engines": {
     "node": "~5.4.1"
