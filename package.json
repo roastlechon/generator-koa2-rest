@@ -11,6 +11,7 @@
     "url": "https://github.com/roastlechon"
   },
   "license": "MIT",
+  "keywords": ["yeoman-generator", "koa2", "koa@next", "rest", "restful", "api", "koa@2", "koa", "babel", "es2015", "es6"],
   "dependencies": {
     "yeoman-generator": "^0.23.3"
   },
