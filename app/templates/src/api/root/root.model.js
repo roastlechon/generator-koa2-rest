@@ -1,6 +1,6 @@
 'use strict';
 
-import * as config from '../../config';
+import config from '../../config';
 
 export function list() {
   return new Promise((resolve) => {

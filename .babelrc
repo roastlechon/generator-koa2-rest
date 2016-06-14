@@ -1,0 +1,9 @@
+{
+  "presets": ["es2015"],
+  "ignore": [
+    "templates",
+  ],
+  "plugins": [
+    "add-module-exports"
+  ]
+}

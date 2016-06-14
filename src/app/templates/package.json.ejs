@@ -29,8 +29,8 @@
     "build": "babel src --out-dir dist",
     "serve": "node dist/server.js",
     "start": "npm run build:serve",
-    "test": "node_modules/.bin/mocha --compilers js:babel-register",
-    "test:watch": "node_modules/.bin/mocha --compilers js:babel-register --watch",
+    "test": "node_modules/.bin/mocha --compilers js:babel-register --recursive",
+    "test:watch": "node_modules/.bin/mocha --compilers js:babel-register --recursive --watch",
     "build:serve": "npm run build && npm run serve",
     "watch": "npm-watch"
   },

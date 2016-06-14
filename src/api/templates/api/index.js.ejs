@@ -1,0 +1,10 @@
+'use strict';
+
+import { index } from './<%= apiName %>.controller';
+import router from 'koa-router';
+
+const <%= apiName %> = router();
+
+<%= apiName %>.get('/', index);
+
+export default <%= apiName %>;

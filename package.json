@@ -14,8 +14,20 @@
   "dependencies": {
     "yeoman-generator": "^0.23.3"
   },
+  "scripts": {
+    "clean": "rm -rf api && rm -rf app",
+    "copy:api:templates": "cp -r src/api/templates api/",
+    "copy:app:templates": "cp -r src/app/templates app/",
+    "build:js": "node_modules/.bin/babel src --out-dir . --ignore templates",
+    "build": "npm run build:js && npm run copy:api:templates && npm run copy:app:templates"
+  },
   "files": [
     "api",
     "app"
-  ]
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0"
+  }
 }
