@@ -1,13 +1,10 @@
 'use strict';
 
-import config from '../../config';
 import { list } from './root.model';
 
-export function index(ctx, next) {
-  return list()
-    .then(data => {
-      ctx.status = 200;
-      ctx.body = data;
-      return next();
-    });
+export async function index(ctx, next) {
+  let data = await list();
+  ctx.status = 200;
+  ctx.body = data;
+  await next();
 }

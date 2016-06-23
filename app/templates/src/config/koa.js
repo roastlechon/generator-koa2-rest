@@ -6,7 +6,6 @@ import parser from 'koa-bodyparser';
 import compress from 'koa-compress';
 
 export default function configKoa(app) {
-
   app.use(compress());
   app.use(parser({
     strict: false

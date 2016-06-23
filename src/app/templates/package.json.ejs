@@ -14,9 +14,15 @@
   },
   "devDependencies": {
     "babel-cli": "^6.0.0",
+    "babel-eslint": "^6.1.0",
     "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-3": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
     "supertest": "^1.2.0",
@@ -32,7 +38,8 @@
     "test": "node_modules/.bin/mocha --compilers js:babel-register --recursive",
     "test:watch": "node_modules/.bin/mocha --compilers js:babel-register --recursive --watch",
     "build:serve": "npm run build && npm run serve",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "lint": "eslint src test"
   },
   "watch": {
     "build:serve": {
@@ -42,5 +49,27 @@
       "extensions": "js",
       "quiet": "true"
     }
+  },
+  "eslintConfig": {
+    "env": {
+      "mocha": true
+    },
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "rules": {
+      "strict": 0,
+      "no-param-reassign": 0,
+      "no-console": 0,
+      "prefer-const": 0,
+      "comma-dangle": 0,
+      "no-use-before-define": 0,
+      "no-underscore-dangle": 0
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
   }
 }

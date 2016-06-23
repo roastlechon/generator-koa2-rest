@@ -71,9 +71,7 @@ var Koa2RestGenerator = function (_Base) {
         projectfiles: function projectfiles() {
           this.fs.copy(this.templatePath('editorconfig'), this.destinationPath('.editorconfig'));
 
-          this.fs.copy(this.templatePath('jshintrc'), this.destinationPath('.jshintrc'));
-
-          this.fs.copy(this.templatePath('babelrc'), this.destinationPath('.babelrc'));
+          this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
         }
       };
     }

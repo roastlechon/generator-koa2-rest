@@ -53,14 +53,10 @@ export default class Koa2RestGenerator extends Base {
         );
 
         this.fs.copy(
-          this.templatePath('jshintrc'),
-          this.destinationPath('.jshintrc')
+          this.templatePath('gitignore'),
+          this.destinationPath('.gitignore')
         );
 
-        this.fs.copy(
-          this.templatePath('babelrc'),
-          this.destinationPath('.babelrc')
-        );
       }
     };
   }
