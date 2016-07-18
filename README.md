@@ -30,10 +30,11 @@ app - Main project folder
               /index.js - Contains all configs. Should prioritize environmental variables
               /koa.js - Middleware integration starts here
               /routes.js - This is where all the main routes are defined
-       /server.js - Starting point for microservice
+       /server.js - koa server
    /test - All tests go here. Tests must end with .test.js
         /e2e - All end to end tests go here
         /unit - All unit tests go here. The structure should mimic src folder
+   index.js - Starting point for microservice
    package.json
 ```
 
