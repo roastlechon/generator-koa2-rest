@@ -3,21 +3,26 @@
   "description": "<%= serviceDescription %>",
   "license": "MIT",
   "version": "0.0.1",
-  "main": "src/server.js",
+  "main": "index.js",
   "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "babel-register": "^6.9.0",
+    "babel-eslint": "^6.1.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "forever": "^0.15.2",
     "koa": "^2.0.0",
     "koa-morgan": "^1.0.1",
     "koa-bodyparser": "^3.1.0",
     "koa-compress": "^2.0.0",
+    "koa-cluster": "^0.2.2",
     "koa-mount": "^2.0.0",
     "koa-router": "^7.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.0.0",
-    "babel-eslint": "^6.1.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.9.0",
     "eslint": "^2.13.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.9.2",
@@ -32,17 +37,18 @@
     "node": "~5.4.1"
   },
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "serve": "node dist/server.js",
-    "start": "npm run build:serve",
-    "test": "node_modules/.bin/mocha --compilers js:babel-register --recursive",
-    "test:watch": "node_modules/.bin/mocha --compilers js:babel-register --recursive --watch",
-    "build:serve": "npm run build && npm run serve",
+    "start": "node index.js",
+    "serve": "node index.js",
+    "cluster": "koa-cluster index.js",
+    "forever": "forever start index.js",
+    "forever:cluster": "forever start koa-cluster index.js",
+    "test": "mocha --compilers js:babel-register --recursive",
+    "test:watch": "mocha --compilers js:babel-register --recursive --watch",
     "watch": "npm-watch",
     "lint": "eslint src test"
   },
   "watch": {
-    "build:serve": {
+    "serve": {
       "patterns": [
         "src"
       ],
@@ -70,6 +76,10 @@
     "presets": [
       "es2015",
       "stage-0"
+    ],
+    "plugins": [
+      "add-module-exports",
+      "transform-runtime"
     ]
   }
 }

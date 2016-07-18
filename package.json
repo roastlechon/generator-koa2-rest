@@ -15,16 +15,29 @@
     "url": "https://github.com/roastlechon/generator-koa2-rest"
   },
   "license": "MIT",
-  "keywords": ["yeoman-generator", "koa2", "koa@next", "rest", "restful", "api", "koa@2", "koa", "babel", "es2015", "es6"],
+  "keywords": [
+    "yeoman-generator",
+    "koa2",
+    "koa@next",
+    "rest",
+    "restful",
+    "api",
+    "koa@2",
+    "koa",
+    "babel",
+    "es2015",
+    "es6"
+  ],
   "dependencies": {
     "yeoman-generator": "^0.23.3"
   },
   "scripts": {
-    "clean": "rm -rf api && rm -rf app",
+    "clean": "rimraf api app",
     "copy:api:templates": "cp -r src/api/templates api/",
     "copy:app:templates": "cp -r src/app/templates app/",
-    "build:js": "node_modules/.bin/babel src --out-dir . --ignore templates",
-    "build": "npm run build:js && npm run copy:api:templates && npm run copy:app:templates"
+    "build:js": "babel src --out-dir . --ignore templates",
+    "build": "npm run build:js && npm run copy:api:templates && npm run copy:app:templates",
+    "prepublish": "npm run clean && npm run build"
   },
   "files": [
     "api",
@@ -33,6 +46,7 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-es2015": "^6.9.0"
+    "babel-preset-es2015": "^6.9.0",
+    "rimraf": "^2.5.3"
   }
 }

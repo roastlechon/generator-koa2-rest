@@ -44,6 +44,11 @@ export default class Koa2RestGenerator extends Base {
           this.templatePath('test'),
           this.destinationPath('test')
         );
+
+        this.fs.copy(
+          this.templatePath('index.js'),
+          this.destinationPath('index.js')
+        );
       },
 
       projectfiles() {

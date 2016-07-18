@@ -1,15 +1,7 @@
-'use strict';
-
-import 'babel-polyfill';
-import config from './config';
-import configRoutes from './config/routes';
-import Koa from 'koa';
-import configKoa from './config/koa';
-
-const app = new Koa();
-
-configKoa(app);
-configRoutes(app);
+require('babel-register');
+require('babel-polyfill');
+const config = require('./src/config');
+const app = require('./src/server');
 
 // http://www.marcusoft.net/2015/10/eaddrinuse-when-watching-tests-with-mocha-and-supertest.html
 // Check for module parent and export app, otherwise app.listen()
